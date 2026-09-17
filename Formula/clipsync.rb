@@ -1,7 +1,7 @@
 class Clipsync < Formula
   desc "End-to-end encrypted multi-device clipboard sync"
   homepage "https://github.com/Jeon1691/clipsync"
-  version "0.1.8"
+  version "0.1.9"
   license any_of: ["MIT", "Apache-2.0"]
 
   livecheck do
@@ -11,21 +11,21 @@ class Clipsync < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/Jeon1691/clipsync/releases/download/v0.1.8/clipsync-aarch64-apple-darwin.tar.gz"
-      sha256 "64b0d127a2c81325fca42e3e3d30f0a08ed948bcd56bda98a6786a34c2eb44bb"
+      url "https://github.com/Jeon1691/clipsync/releases/download/v0.1.9/clipsync-aarch64-apple-darwin.tar.gz"
+      sha256 "54de0dba130ea2955805a11176659b294d8537d1a359e9c8ff459b61ddaec471"
     else
-      url "https://github.com/Jeon1691/clipsync/releases/download/v0.1.8/clipsync-x86_64-apple-darwin.tar.gz"
-      sha256 "3872256797f31f976bafc200d1d590da16c695a8c8a821060310e74b4569f03e"
+      url "https://github.com/Jeon1691/clipsync/releases/download/v0.1.9/clipsync-x86_64-apple-darwin.tar.gz"
+      sha256 "1db19b629a2b78500af70c9491e2e2c7fb7dc8fe1aaf0f7500749cdfd9e256a1"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/Jeon1691/clipsync/releases/download/v0.1.8/clipsync-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "d16cde6d73f09cc603caefec6ee60eba63546ded735484368faf63e50bfaf7a7"
+      url "https://github.com/Jeon1691/clipsync/releases/download/v0.1.9/clipsync-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "782fd8aad6ca202e980e7df62f92f8f751228f6c6cff0368880fc5e19854def8"
     else
-      url "https://github.com/Jeon1691/clipsync/releases/download/v0.1.8/clipsync-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "307b57a7812def07a064713a7bf0238692ccce3409e42ba40c7dffbd71d76422"
+      url "https://github.com/Jeon1691/clipsync/releases/download/v0.1.9/clipsync-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "2cee011ed10dab77633d28afe4f7436f9c35205ba5334456d2718e1b37235f1f"
     end
   end
 
@@ -44,6 +44,7 @@ class Clipsync < Formula
     <<~EOS
       Default relay is https://clipsync.develicit.dev
       Device identity is created on install (or on first use).
+      After pairing, the daemon starts at login and reconnects after reboot.
 
         clipsync room create
     EOS
