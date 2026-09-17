@@ -1,7 +1,7 @@
 class Clipsync < Formula
   desc "End-to-end encrypted multi-device clipboard sync"
   homepage "https://github.com/Jeon1691/clipsync"
-  version "0.1.5"
+  version "0.1.6"
   license any_of: ["MIT", "Apache-2.0"]
 
   livecheck do
@@ -11,21 +11,21 @@ class Clipsync < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/Jeon1691/clipsync/releases/download/v0.1.5/clipsync-aarch64-apple-darwin.tar.gz"
-      sha256 "51b633e078c28050a440d7d86ca0b43e0eb01efe33f94314e027eba54a5975c5"
+      url "https://github.com/Jeon1691/clipsync/releases/download/v0.1.6/clipsync-aarch64-apple-darwin.tar.gz"
+      sha256 "3c020f3403c9d79ccfada224b01f857f4991b1aa5cf221631fb8e92cc9b96424"
     else
-      url "https://github.com/Jeon1691/clipsync/releases/download/v0.1.5/clipsync-x86_64-apple-darwin.tar.gz"
-      sha256 "78784536d45bfb35318c7ca798cb603a7514f7bcbec3f24bfe131ff28551d136"
+      url "https://github.com/Jeon1691/clipsync/releases/download/v0.1.6/clipsync-x86_64-apple-darwin.tar.gz"
+      sha256 "1ef88c446c9154324986945e6e40105a4ff9368ae86cf403e9986f31427a32cf"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/Jeon1691/clipsync/releases/download/v0.1.5/clipsync-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "7bb485a740d354050dfc5715ed0fb30aac913d66e070e8048ab421609ae823bc"
+      url "https://github.com/Jeon1691/clipsync/releases/download/v0.1.6/clipsync-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "b97b695a5b2eabc1a2cfbe69d26781c78b9c4a10892b615d96949e816e5987e1"
     else
-      url "https://github.com/Jeon1691/clipsync/releases/download/v0.1.5/clipsync-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "d065478e64d5f2fdbc03b2322ea0f50766e14ac3d8b760cef5aecc78b7317a16"
+      url "https://github.com/Jeon1691/clipsync/releases/download/v0.1.6/clipsync-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "751baa010ee8c2b12d1e90a3e00c5051f2cfa2e0cbb95ba04a62cff89f9f1548"
     end
   end
 
