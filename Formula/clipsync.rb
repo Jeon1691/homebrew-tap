@@ -1,7 +1,7 @@
 class Clipsync < Formula
   desc "End-to-end encrypted multi-device clipboard sync"
   homepage "https://github.com/Jeon1691/clipsync"
-  version "0.1.7"
+  version "0.1.8"
   license any_of: ["MIT", "Apache-2.0"]
 
   livecheck do
@@ -11,21 +11,21 @@ class Clipsync < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/Jeon1691/clipsync/releases/download/v0.1.7/clipsync-aarch64-apple-darwin.tar.gz"
-      sha256 "17d37ca3f73d1f3a655d94e3c86ec4c8f8552ad4859ac94242fd16509ac3183f"
+      url "https://github.com/Jeon1691/clipsync/releases/download/v0.1.8/clipsync-aarch64-apple-darwin.tar.gz"
+      sha256 "64b0d127a2c81325fca42e3e3d30f0a08ed948bcd56bda98a6786a34c2eb44bb"
     else
-      url "https://github.com/Jeon1691/clipsync/releases/download/v0.1.7/clipsync-x86_64-apple-darwin.tar.gz"
-      sha256 "1f5596d360d2b41ed89617ca3c93aa69d43063b60f95b4e27c030406a8c6529c"
+      url "https://github.com/Jeon1691/clipsync/releases/download/v0.1.8/clipsync-x86_64-apple-darwin.tar.gz"
+      sha256 "3872256797f31f976bafc200d1d590da16c695a8c8a821060310e74b4569f03e"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/Jeon1691/clipsync/releases/download/v0.1.7/clipsync-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "17367322bcaba1d6afce2472e4d2df3e4f683ad9be7145637aa5eb59772bd5fe"
+      url "https://github.com/Jeon1691/clipsync/releases/download/v0.1.8/clipsync-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "d16cde6d73f09cc603caefec6ee60eba63546ded735484368faf63e50bfaf7a7"
     else
-      url "https://github.com/Jeon1691/clipsync/releases/download/v0.1.7/clipsync-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "164964e8bc38a7ea69ac3e944276b32453e8544aff6f43bcbf6c44128e79e1b8"
+      url "https://github.com/Jeon1691/clipsync/releases/download/v0.1.8/clipsync-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "307b57a7812def07a064713a7bf0238692ccce3409e42ba40c7dffbd71d76422"
     end
   end
 
@@ -35,11 +35,16 @@ class Clipsync < Formula
     bin.install binary
   end
 
+  def post_install
+    return if ENV["HOME"].to_s.empty?
+    quiet_system bin/"clipsync", "init"
+  end
+
   def caveats
     <<~EOS
       Default relay is https://clipsync.develicit.dev
+      Device identity is created on install (or on first use).
 
-        clipsync init
         clipsync room create
     EOS
   end
